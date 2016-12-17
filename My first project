@@ -1,44 +1,44 @@
 Title = CrackLockedFiles
-Echo@ off 
-Set input =
-"A"
-Set input =
-"B"
-Set input =
-"C"
-Set /p input A = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSWXYZ"
-Set /p input B = "0123456789"
-Set /p input C = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS0123456789"
-Goto start 
-%input% = "A"
-%input% = "B"
-%input% = "C"
-Echo==================
-Echo==================
-Echo==================
-%input% A = Goto START "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" %RANDOM%
-Start .\
+@Echo off
+cls
+Set /p choice = A
+Set /p choice = B
+Set /p choice = C 
+Set /p A = "letter abcABC"
+Set /p B = "NUMBER 123"
+Set /p C = "BRUT-FORCE abc'ABC'123'@^$&"
+Goto START
+%input% = A
+%input% = B
+%input% = C 
+::ENTER THE FIGHT A'B'C
+:: 
+IF "%A%"=="" goto A
+IF "%B%"=="" goto B
+IF "%C%"=="" goto C 
+:A
+IF %input% A = Goto START 
+"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+%RANDOM%
+Start .\ 
+Goto infinite
+Find PASSWORD = %PSWD%
+Echo PASSWORD IS %PSWD%
+Goto STOP
+:B
+IF %input% B = Goto START 
+"0123456789" 
+%RANDOM% 
+Start .\ 
+goto infinite
+Find PASSWORD = %PSWD%
+Echo PASSWORD IS %PSWD%
+Goto STOP 
+:C
+IF %input% C = Goto START "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" 
+%RANDOM%
+Start .\ 
+goto infinite 
 Find PASSWORD = %PWD%
-Goto CLOSE
-Goto START 
-%input% = "A"
-%input% = "B"
-%input% = "C"
-Echo==================
-Echo==================
-Echo==================
-%input% B = Goto START "0123456789" %RANDOM%
-Start .\
-Find PASSWORD = %PWD%
-Goto CLOSE
-Goto START 
-%input% = "A"
-%input% = "B"
-%input% = "C" 
-Echo==================
-Echo==================
-Echo==================
-%input% C = Goto START "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" %RANDOM%
-Start .\
-Find PASSWORD = %PWD%
+Echo PASSWORS IS %PWD%
 Goto STOP
