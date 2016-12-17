@@ -1,0 +1,44 @@
+Title = CopyBashScript
+Echo@ off 
+Set input =
+"A"
+Set input =
+"B"
+Set input =
+"C"
+Set /p input A = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSWXYZ"
+Set /p input B = "0123456789"
+Set /p input C = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS0123456789"
+Goto start 
+%input% = "A"
+%input% = "B"
+%input% = "C"
+Echo==================
+Echo==================
+Echo==================
+%input% A = Goto START "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" %RANDOM%
+Start .\
+Find PASSWORD = %PWD%
+Goto CLOSE
+Goto START 
+%input% = "A"
+%input% = "B"
+%input% = "C"
+Echo==================
+Echo==================
+Echo==================
+%input% B = Goto START "0123456789" %RANDOM%
+Start .\
+Find PASSWORD = %PWD%
+Goto CLOSE
+Goto START 
+%input% = "A"
+%input% = "B"
+%input% = "C" 
+Echo==================
+Echo==================
+Echo==================
+%input% C = Goto START "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" %RANDOM%
+Start .\
+Find PASSWORD = %PWD%
+Goto STOP
