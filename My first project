@@ -1,4 +1,4 @@
-Title = CopyBashScript
+Title = CrackLockedFiles
 Echo@ off 
 Set input =
 "A"
