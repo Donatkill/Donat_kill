@@ -1,39 +1,42 @@
 @Title=CrackLockedFiles
 @Echo 
 cls
-Set /p choice=A
-Set /p choice=B
-Set /p choice=C 
-Set /p A="letter abcABC"
-Set /p B="NUMBER 123"
-Set /p C="BRUT-FORCE abc'ABC'123'@^$&"
-goto start
+Set choice=A
+Set choice=B
+Set choice=C 
+/p A="letter abcABC"
+/p B="NUMBER 123"
+/p C="BRUT-FORCE abc'ABC'123'@^$&"
+}
+choice of user;
 %input%=A
 %input%=B
 %input%=C 
-Echo ENTER THE FIGHT "A'B'C" 
-REM 
+}
+Echo ENTER THE FIGHT "A'B'C"
+REM
+}
 'if' %A%=goto A
 'if' %B%=goto B
-'if' %C%=goto C 
+'if' %C%=goto C
+}
 :A
-'if' %input% A=goto start
 Start .
 %RANDOM% "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 goto infinite
 Find PASSWORD=%PSWD%
 Echo PASSWORD IS %PSWD%
 goto stop
+}
 :B
-'if' %input% B=goto start
 Start .
 %RANDOM% "0123456789"  
 goto infinite
 Find PASSWORD=%PSWD%
 Echo PASSWORD IS %PSWD%
 goto stop
+}
 :C
-'if' %input% C=goto start
 Start .
 %RANDOM% "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 goto infinite 
